@@ -5,6 +5,8 @@ import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
 import com.sky.result.PageResult;
 
+import java.util.List;
+
 
 public interface CategoryService {
 
@@ -18,5 +20,5 @@ public interface CategoryService {
 
     void delete(String id);
 
-    Category selectByType(String type);
+    List<Category> selectByType(String type);
 }
