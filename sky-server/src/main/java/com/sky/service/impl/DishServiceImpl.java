@@ -159,5 +159,11 @@ public class DishServiceImpl implements DishService {
                 .build();
         dishMapper.update(dish);
     }
+    @Override
+    public List<DishVO> listWithFlavor(Long categoryId) {
+        log.info("根据分类id查询菜品：{}",categoryId);
+        List<DishVO> dishVOList = dishMapper.listWithFlavor(categoryId);
+        return dishVOList;
+    }
 
 }
