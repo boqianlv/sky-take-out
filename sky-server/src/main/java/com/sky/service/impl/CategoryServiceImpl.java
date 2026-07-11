@@ -74,4 +74,13 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Category> selectByType(String type) {
         return categoryMapper.selectByType(type);
     }
+
+    /**
+     * 根据类型查询分类
+     * @param type
+     * @return
+     */
+    public List<Category> list(Integer type) {
+        return categoryMapper.list(type);
+    }
 }

@@ -66,4 +66,12 @@ public interface DishMapper {
      */
     @Select("select d.* from dish d  where d.category_id = #{categoryId} and d.status = 1")
     List<DishVO> listWithFlavor(Long categoryId);
+
+    /**
+     * 动态条件查询菜品
+     *
+     * @param dish
+     * @return
+     */
+    List<Dish> list(Dish dish);
 }

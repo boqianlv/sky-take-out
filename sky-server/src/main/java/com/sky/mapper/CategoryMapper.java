@@ -29,4 +29,11 @@ public interface CategoryMapper {
 
     @Select("select * from category where type = #{type}")
     List<Category> selectByType(String type);
+
+    /**
+     * 根据类型查询分类
+     * @param type
+     * @return
+     */
+    List<Category> list(Integer type);
 }

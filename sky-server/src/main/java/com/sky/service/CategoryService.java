@@ -21,4 +21,11 @@ public interface CategoryService {
     void delete(String id);
 
     List<Category> selectByType(String type);
+
+    /**
+     * 根据类型查询分类
+     * @param type
+     * @return
+     */
+    List<Category> list(Integer type);
 }
