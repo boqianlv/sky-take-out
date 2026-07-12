@@ -33,20 +33,20 @@ public class CommonController {
      */
     @ApiOperation("文件上传")
     @PostMapping("/upload")
-    public Result< String> upload(MultipartFile file){
+    public Result< String> upload(MultipartFile file) throws IOException {
         log.info("文件上传：{}",file);
 
-        //            //获取原始文件名
-//            String originalFilename = file.getOriginalFilename();
-//            //截取文件后缀
-//            String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-//            //构造新文件名
-//            String objectName = UUID.randomUUID().toString() + extension;
-//
-//
-//            String filePath = aliOssUtil.upload(file.getBytes(), null);
-        // return Result.success(filePath);
-        return Result.success("default");
+        //获取原始文件名
+        String originalFilename = file.getOriginalFilename();
+        //截取文件后缀
+        String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+        //构造新文件名
+        String objectName = UUID.randomUUID().toString() + extension;
+
+
+        String filePath = aliOssUtil.upload(file.getBytes(), objectName);
+        return Result.success(filePath);
+        //return Result.success("default");
 
     }
 }
